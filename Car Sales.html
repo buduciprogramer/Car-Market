@@ -1,171 +1,357 @@
-<div class="card-container">
-    <!-- Kartica 1 -->
-    <div class="card">
-        <img src="images/Audi.png" alt="Vozilo 1">
-        <div class="card-content">
-            <h3>Vozilo 1</h3>
-            <p>Detaljan opis vozila 1. Informacije o performansama, karakteristikama, i svim detaljima o ovom vozilu.</p>
-            <p><strong>Cijena:</strong> 100,000 EUR</p>
-            <p><strong>Godina proizvodnje:</strong> 2020</p>
-            <a href="Car Sales.html" class="button">Pogledaj više</a>
+
+<body>
+    
+
+    <nav class="navbar">
+        <ul class="navbar-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Catalog.html">Catalog</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+            <li><a href="CarSales.html">Car Sales</a></li>
+        </ul>
+    </nav>
+    
+    
+    
+    <div class="card-container">
+        <div class="card first">
+            <img src="images/Audi.png" alt="Vozilo 1">
+            <div class="card-content">
+                <h3>Vozilo 1</h3>
+                <p>Detaljan opis vozila 1. Informacije o performansama, karakteristikama, i svim detaljima o ovom vozilu.</p>
+                <p><strong>Cijena:</strong> 100,000 EUR</p>
+                <p><strong>Godina proizvodnje:</strong> 2020</p>
+                <p><strong>Prodato 800 auta</strong></p>
+                <a href="CarSales.html" class="button">Pogledaj više</a>
+            </div>
+        </div>
+    
+        <div class="card second">
+            <img src="images/Mercedes.jpg" alt="Vozilo 2">
+            <div class="card-content">
+                <h3>Vozilo 2</h3>
+                <p>Detaljan opis vozila 2. Informacije o performansama, karakteristikama, i svim detaljima o ovom vozilu.</p>
+                <p><strong>Cijena:</strong> 200,000 EUR</p>
+                <p><strong>Godina proizvodnje:</strong> 2021</p>
+               <p><strong>Prodato 900 auta</strong></p>
+                <a href="CarSales.html" class="button">Pogledaj više</a>
+            </div>
+        </div>
+    
+        <div class="card third">
+            <img src="images/Volkswagen.jpg" alt="Vozilo 3">
+            <div class="card-content">
+                <h3>Vozilo 3</h3>
+                <p>Detaljan opis vozila 3. Informacije o performansama, karakteristikama, i svim detaljima o ovom vozilu.</p>
+                <p><strong>Cijena:</strong> 400,000 EUR</p>
+                <p><strong>Godina proizvodnje:</strong> 2021</p>
+                <p><strong>Prodato 100 auta</strong></p>
+                <a href="CarSales.html" class="button">Pogledaj više</a>
+            </div>
         </div>
     </div>
-
-    <!-- Kartica 2 -->
-    <div class="card">
-        <img src="images/Mercedes.jpg" alt="Vozilo 2">
-        <div class="card-content">
-            <h3>Vozilo 2</h3>
-            <p>Detaljan opis vozila 2. Informacije o performansama, karakteristikama, i svim detaljima o ovom vozilu.</p>
-            <p><strong>Cijena:</strong> 200,000 EUR</p>
-            <p><strong>Godina proizvodnje:</strong> 2021</p>
-            <a href="Car Sales.html" class="button">Pogledaj više</a>
+    
+    <!-- Kartice za vozila 4, 5, 6 -->
+    <div class="row centered">
+        <div class="car first">
+            <img src="images/ford.jpg" alt="Ford" class="expanded-img">
+            <h3>Vozilo 4</h3>
+            <p>Detaljan opis vozila 4. Informacije o performansama, karakteristikama, i svim detaljima o ovom vozilu.</p>
+            <p><strong>Cijena:</strong> 50,000 EUR</p>
+            <p><strong>Godina proizvodnje:</strong> 2000</p>
+            <p><strong>Prodato 800 auta</strong></p>
+            <a href="CarSales.html" class="button">Pogledaj više</a>
+        </div>
+    
+        <div class="car second">
+            <img src="images/reno.jpg" alt="Renault" class="expanded-img">
+            <h3>Vozilo 5</h3>
+            <p>Detaljan opis vozila 5. Informacije o performansama, karakteristikama, i svim detaljima o ovom vozilu.</p>
+            <p><strong>Cijena:</strong> 50,000 EUR</p>
+            <p><strong>Godina proizvodnje:</strong> 2000</p>
+        <p><strong>Prodato 100</strong></p>
+            <a href="CarSales.html" class="button">Pogledaj više</a>
+        </div>
+    
+        <div class="car third">
+            <img src="images/honda.jpg" alt="Honda" class="expanded-img">
+            <h3>Vozilo 6</h3>
+            <p>Detaljan opis vozila 6. Informacije o performansama, karakteristikama, i svim detaljima o ovom vozilu.</p>
+            <p><strong>Cijena:</strong> 300,000 EUR</p>
+            <p><strong>Godina proizvodnje:</strong> 2023</p>
+            <p><strong>Prodato 300 auta</strong></p>
+            <a href="CarSales.html" class="button">Pogledaj više</a>
         </div>
     </div>
-
-    <!-- Kartica 3 -->
-    <div class="card">
-        <img src="images/Volkswagen.jpg" alt="Vozilo 3">
-        <div class="card-content">
-            <h3>Vozilo 3</h3>
-            <p>Detaljan opis vozila 3. Informacije o performansama, karakteristikama, i svim detaljima o ovom vozilu.</p>
-            <p><strong>Cijena:</strong> 400,000 EUR</p>
-            <p><strong>Godina proizvodnje:</strong> 2021</p>
-            <a href="Car Sales.html" class="button">Pogledaj više</a>
+    
+    
+    <div class="contact-section">
+        <h2>Kontaktirajte nas</h2>
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="name">Ime:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Poruka:</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="button">Pošaljite</button>
+        </form>
+        
+        <div id="responseMessage" style="display:none;">
+            <h3>Vaša poruka:</h3>
+            <p id="userMessage"></p>
         </div>
     </div>
-</div>
-
-
-<div class="row centered">
     
-    <div class="car">
-        <img src="images/ford.jpg" alt="Ford" class="expanded-img">
-        <h3>Vozilo 4</h3>
-        <p>Detaljan opis vozila 4. Informacije o performansama, karakteristikama, i svim detaljima o ovom vozilu.</p>
-        <p><strong>Cijena:</strong> 50,000 EUR</p>
-        <p><strong>Godina proizvodnje:</strong> 2000</p>
-        <a href="Car Sales.html" class="button">Pogledaj više</a>
-    </div>
-
-    <div class="car">
-        <img src="images/reno.jpg" alt="Renault" class="expanded-img">
-        <h3>Vozilo 5</h3>
-        <p>Detaljan opis vozila 5. Informacije o performansama, karakteristikama, i svim detaljima o ovom vozilu.</p>
-        <p><strong>Cijena:</strong> 50,000 EUR</p>
-        <p><strong>Godina proizvodnje:</strong> 2000</p>
-        <a href="Car Sales.html" class="button">Pogledaj više</a>
-    </div>
-
+    <style>
     
-    <div class="car">
-        <img src="images/honda.jpg" alt="Honda" class="expanded-img">
-        <h4>Vozilo 6</h4>
-        <p>Detaljan opis vozila 6. Informacije o performansama, karakteristikama, i svim detaljima o ovom vozilu.</p>
-        <p><strong>Cijena:</strong> 300,000 EUR</p>
-        <p><strong>Godina proizvodnje:</strong> 2023</p>
-        <a href="Car Sales.html" class="button">Pogledaj više</a>
-    </div>
-</div>
-
-
-<style>
-
-    .card-container, .row.centered {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;  
-        gap: 20px;
-        padding: 20px;
-    }
-    
-    
-    .card, .car {
-        width: calc(33.333% - 20px); 
-        box-sizing: border-box;
-        margin-bottom: 20px;
-    }
-    
-    
-    .card img, .car img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-    }
-    
-    
-    .card-content, .car {
-        text-align: center; 
-        padding: 10px;
-    }
-    
-    .card-content h3, .car h3, .car h4 {
-        margin-top: 0;
-        font-size: 24px;
-    }
-    
-    
-    .button {
-        display: inline-block;
-        padding: 10px 15px;
-        background-color: #007bff;
-        color: #fff;
-        text-decoration: none;
-        border-radius: 5px;
-        font-size: 16px;
-        transition: background-color 0.3s;
-    }
-    
-    .button:hover {
-        background-color: #0056b3;
-    }
-    
-    .card:hover {
-        transform: scale(1.05); 
-    }
-    
-    
-    .card-content p, .car p {
-        color: #666;
-        font-size: 16px;
-        margin-bottom: 10px;
-    }
-    
-    .card, .car {
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        background-color: #fff;
-        border-radius: 10px;
-        overflow: hidden;
-    }
-    
-    
-    .card img, .car img {
-        height: 200px; 
-        object-fit: cover;
-    }
-    
-    
-    .row.centered {
-        justify-content: center; 
-    }
-    
-    
-    .row.centered {
-        gap: 20px;
-    }
-    
-    
-    @media (max-width: 768px) {
-        .card, .car {
-            width: calc(50% - 20px); 
+        .navbar {
+            background-color: #333;
+            padding: 10px 20px;
         }
-    }
-    
-    @media (max-width: 480px) {
-        .card, .car {
-            width: 100%; 
+        
+        .navbar-menu {
+            list-style-type: none;
+            display: flex;
+            justify-content: space-around;
         }
-    }
+        
+        .navbar-menu li {
+            margin: 0 15px;
+        }
+        
+        .navbar-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        
+        
+        .card-container {
+            display: grid;
+            grid-template-columns: 1fr 3fr 1fr; 
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .card, .car {
+            box-sizing: border-box;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .card img, .car img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .card-content, .car {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .card-content h3, .car h3 {
+            margin-top: 0;
+            font-size: 24px;
+        }
+        
+        .card-content p, .car p {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        
+        
+        .row.centered {
+            display: grid;
+            grid-template-columns: 1fr 3fr 1fr; 
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        
+        .row.centered {
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        
+        @media (max-width: 768px) {
+            .card-container {
+                grid-template-columns: 1fr 1fr; 
+            }
+            .card, .car {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .card-container {
+                grid-template-columns: 1fr; 
+            }
+            .card, .car {
+                width: 100%;
+            }
+        }
+    
+        .contact-container {
+            width: 80%;
+            margin: 50px auto;
+            text-align: center;
+        }
+        
+        .contact-container h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            font-size: 18px;
+            margin-bottom: 5px;
+            display: block;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        textarea {
+            height: 150px;
+        }
+        
+        .button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+        .button:hover {
+            background-color: #0056b3;
+        }
+    
+    
+    
+    
+        .contact-section {
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: auto;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            font-weight: bold;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        
+        #responseMessage {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+        }
+    
+        .navbar-menu a.active {
+            font-weight: bold;
+            color: #007bff;  
+        }
+        
+       
+    
+    </style>
+    
+    
+        
+</body>
 
 
-</style>
+<script>
+
+
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+    
+        
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var message = document.getElementById('message').value;
+    
+        
+        setTimeout(function() {
+            
+            document.getElementById('userMessage').innerHTML = `<strong>Ime:</strong> ${name} <br> <strong>Email:</strong> ${email} <br> <strong>Poruka:</strong> ${message}`;
+            
+            
+            document.getElementById('responseMessage').style.display = 'block';
+    
+            
+            document.getElementById('contactForm').reset();
+        }, 1000);  
+    });
+
+
+    window.addEventListener('load', function() {
+        var currentLocation = window.location.pathname;
+        var menuItems = document.querySelectorAll('.navbar-menu a');
+
+        menuItems.forEach(function(item) {
+            if (item.getAttribute('href') === currentLocation) {
+                item.classList.add('active'); // Dodajemo klasu active za trenutnu stranicu
+            } else {
+                item.classList.remove('active'); // Uklanjamo klasu active sa drugih linkova
+            }
+        });
+    });
+    
+
+
+</script>

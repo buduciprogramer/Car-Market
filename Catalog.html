@@ -1,171 +1,193 @@
-<div class="card-container">
-    <!-- Kartica 1 -->
-    <div class="card">
-        <img src="images/Audi.png" alt="Vozilo 1">
-        <div class="card-content">
-            <h3>Vozilo 1</h3>
-            <p>Detaljan opis vozila 1. Informacije o performansama, karakteristikama, i svim detaljima o ovom vozilu.</p>
-            <p><strong>Cijena:</strong> 100,000 EUR</p>
-            <p><strong>Godina proizvodnje:</strong> 2020</p>
-            <a href="Catalog.html" class="button">Pogledaj više</a>
-        </div>
-    </div>
-
-    <!-- Kartica 2 -->
-    <div class="card">
-        <img src="images/Mercedes.jpg" alt="Vozilo 2">
-        <div class="card-content">
-            <h3>Vozilo 2</h3>
-            <p>Detaljan opis vozila 2. Informacije o performansama, karakteristikama, i svim detaljima o ovom vozilu.</p>
-            <p><strong>Cijena:</strong> 200,000 EUR</p>
-            <p><strong>Godina proizvodnje:</strong> 2021</p>
-            <a href="Catalog.html" class="button">Pogledaj više</a>
-        </div>
-    </div>
-
-    <!-- Kartica 3 -->
-    <div class="card">
-        <img src="images/Volkswagen.jpg" alt="Vozilo 3">
-        <div class="card-content">
-            <h3>Vozilo 3</h3>
-            <p>Detaljan opis vozila 3. Informacije o performansama, karakteristikama, i svim detaljima o ovom vozilu.</p>
-            <p><strong>Cijena:</strong> 400,000 EUR</p>
-            <p><strong>Godina proizvodnje:</strong> 2021</p>
-            <a href="Catalog.html" class="button">Pogledaj više</a>
-        </div>
-    </div>
-</div>
-
-
-<div class="row centered">
-    
-    <div class="car">
-        <img src="images/ford.jpg" alt="Ford" class="expanded-img">
-        <h3>Vozilo 4</h3>
-        <p>Detaljan opis vozila 4. Informacije o performansama, karakteristikama, i svim detaljima o ovom vozilu.</p>
-        <p><strong>Cijena:</strong> 50,000 EUR</p>
-        <p><strong>Godina proizvodnje:</strong> 2000</p>
-        <a href="Catalog.html" class="button">Pogledaj više</a>
-    </div>
-
-    <div class="car">
-        <img src="images/reno.jpg" alt="Renault" class="expanded-img">
-        <h3>Vozilo 5</h3>
-        <p>Detaljan opis vozila 5. Informacije o performansama, karakteristikama, i svim detaljima o ovom vozilu.</p>
-        <p><strong>Cijena:</strong> 50,000 EUR</p>
-        <p><strong>Godina proizvodnje:</strong> 2000</p>
-        <a href="Catalog.html" class="button">Pogledaj više</a>
-    </div>
-
-    
-    <div class="car">
-        <img src="images/honda.jpg" alt="Honda" class="expanded-img">
-        <h4>Vozilo 6</h4>
-        <p>Detaljan opis vozila 6. Informacije o performansama, karakteristikama, i svim detaljima o ovom vozilu.</p>
-        <p><strong>Cijena:</strong> 300,000 EUR</p>
-        <p><strong>Godina proizvodnje:</strong> 2023</p>
-        <a href="Catalog.html" class="button">Pogledaj više</a>
-    </div>
-</div>
-
-
-<style>
-
-    .card-container, .row.centered {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;  
-        gap: 20px;
-        padding: 20px;
-    }
-    
-    
-    .card, .car {
-        width: calc(33.333% - 20px); 
-        box-sizing: border-box;
-        margin-bottom: 20px;
-    }
-    
-    
-    .card img, .car img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-    }
-    
-    
-    .card-content, .car {
-        text-align: center; 
-        padding: 10px;
-    }
-    
-    .card-content h3, .car h3, .car h4 {
-        margin-top: 0;
-        font-size: 24px;
-    }
-    
-    
-    .button {
-        display: inline-block;
-        padding: 10px 15px;
-        background-color: #007bff;
-        color: #fff;
-        text-decoration: none;
-        border-radius: 5px;
-        font-size: 16px;
-        transition: background-color 0.3s;
-    }
-    
-    .button:hover {
-        background-color: #0056b3;
-    }
-    
-    .card:hover {
-        transform: scale(1.05); 
-    }
-    
-    
-    .card-content p, .car p {
-        color: #666;
-        font-size: 16px;
-        margin-bottom: 10px;
-    }
-    
-    .card, .car {
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        background-color: #fff;
-        border-radius: 10px;
-        overflow: hidden;
-    }
-    
-    
-    .card img, .car img {
-        height: 200px; 
-        object-fit: cover;
-    }
-    
-    
-    .row.centered {
-        justify-content: center; 
-    }
-    
-    
-    .row.centered {
-        gap: 20px;
-    }
-    
-    
-    @media (max-width: 768px) {
-        .card, .car {
-            width: calc(50% - 20px); 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vozila</title>
+    <style>
+        /* Navbar Styles */
+        .navbar {
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
         }
-    }
-    
-    @media (max-width: 480px) {
-        .card, .car {
-            width: 100%; 
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+            font-size: 18px;
+            transition: background-color 0.3s;
         }
-    }
 
+        .navbar a:hover {
+            background-color: #575757;
+        }
 
-</style>
+        /* Card Container Styles */
+        .card-container, .row.centered {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card, .car {
+            width: calc(33.333% - 20px);
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        .card img, .car img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content, .car {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .card-content h3, .car h3, .car h4 {
+            margin-top: 0;
+            font-size: 24px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-content p, .car p {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .card, .car {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .row.centered {
+            justify-content: center;
+        }
+
+        .row.centered {
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .card, .car {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card, .car {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html">Početna</a>
+        <a href="CarSales.html">Car Sales</a>
+        <a href="about.html">O nama</a>
+    </nav>
+
+    <!-- Card Container -->
+    <div class="card-container">
+        <!-- Kartica 1 -->
+        <div class="card">
+            <img src="images/Audi.png" alt="Vozilo 1">
+            <div class="card-content">
+                <h3>Vozilo 1</h3>
+                <p>Detaljan opis vozila 1. Informacije o performansama, karakteristikama, i svim detaljima o ovom vozilu.</p>
+                <p><strong>Cijena:</strong> 100,000 EUR</p>
+                <p><strong>Godina proizvodnje:</strong> 2020</p>
+                <a href="Car Sales.html" class="button">Pogledaj više</a>
+            </div>
+        </div>
+
+        <!-- Kartica 2 -->
+        <div class="card">
+            <img src="images/Mercedes.jpg" alt="Vozilo 2">
+            <div class="card-content">
+                <h3>Vozilo 2</h3>
+                <p>Detaljan opis vozila 2. Informacije o performansama, karakteristikama, i svim detaljima o ovom vozilu.</p>
+                <p><strong>Cijena:</strong> 200,000 EUR</p>
+                <p><strong>Godina proizvodnje:</strong> 2021</p>
+                <a href="Car Sales.html" class="button">Pogledaj više</a>
+            </div>
+        </div>
+
+        <!-- Kartica 3 -->
+        <div class="card">
+            <img src="images/Volkswagen.jpg" alt="Vozilo 3">
+            <div class="card-content">
+                <h3>Vozilo 3</h3>
+                <p>Detaljan opis vozila 3. Informacije o performansama, karakteristikama, i svim detaljima o ovom vozilu.</p>
+                <p><strong>Cijena:</strong> 400,000 EUR</p>
+                <p><strong>Godina proizvodnje:</strong> 2021</p>
+                <a href="Car Sales.html" class="button">Pogledaj više</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row centered">
+        <!-- Kartica 4 -->
+        <div class="car">
+            <img src="images/ford.jpg" alt="Ford" class="expanded-img">
+            <h3>Vozilo 4</h3>
+            <p>Detaljan opis vozila 4. Informacije o performansama, karakteristikama, i svim detaljima o ovom vozilu.</p>
+            <p><strong>Cijena:</strong> 50,000 EUR</p>
+            <p><strong>Godina proizvodnje:</strong> 2000</p>
+            <a href="Car Sales.html" class="button">Pogledaj više</a>
+        </div>
+
+        <!-- Kartica 5 -->
+        <div class="car">
+            <img src="images/reno.jpg" alt="Renault" class="expanded-img">
+            <h3>Vozilo 5</h3>
+            <p>Detaljan opis vozila 5. Informacije o performansama, karakteristikama, i svim detaljima o ovom vozilu.</p>
+            <p><strong>Cijena:</strong> 50,000 EUR</p>
+            <p><strong>Godina proizvodnje:</strong> 2000</p>
+            <a href="Car Sales.html" class="button">Pogledaj više</a>
+        </div>
+
+        <!-- Kartica 6 -->
+        <div class="car">
+            <img src="images/honda.jpg" alt="Honda" class="expanded-img">
+            <h4>Vozilo 6</h4>
+            <p>Detaljan opis vozila 6. Informacije o performansama, karakteristikama, i svim detaljima o ovom vozilu.</p>
+            <p><strong>Cijena:</strong> 300,000 EUR</p>
+            <p><strong>Godina proizvodnje:</strong> 2023</p>
+            <a href="Car Sales.html" class="button">Pogledaj više</a>
+        </div>
+    </div>
+
+</body>
+</html>
