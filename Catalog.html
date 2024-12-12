@@ -5,28 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vozila</title>
     <style>
-        /* Navbar Styles */
+        /* Stilovi za navbar */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
         .navbar {
             background-color: #333;
-            padding: 10px 0;
-            text-align: center;
+            overflow: hidden;
         }
 
         .navbar a {
+            float: left;
+            display: block;
             color: white;
-            text-decoration: none;
+            text-align: center;
             padding: 14px 20px;
-            display: inline-block;
-            font-size: 18px;
-            transition: background-color 0.3s;
+            text-decoration: none;
         }
 
         .navbar a:hover {
-            background-color: #575757;
+            background-color: #ddd;
+            color: black;
         }
 
-        /* Card Container Styles */
-        .card-container, .row.centered {
+        /* Stilovi za modalni prozor */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Stilovi za kartice */
+        .card-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-evenly;
@@ -34,26 +78,25 @@
             padding: 20px;
         }
 
-        .card, .car {
+        .card {
             width: calc(33.333% - 20px);
             box-sizing: border-box;
             margin-bottom: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
         }
 
-        .card img, .car img {
+        .card img {
             width: 100%;
             height: 200px;
             object-fit: cover;
         }
 
-        .card-content, .car {
-            text-align: center;
-            padding: 10px;
-        }
-
-        .card-content h3, .car h3, .car h4 {
+        .card-content h3 {
             margin-top: 0;
-            font-size: 24px;
         }
 
         .button {
@@ -70,134 +113,175 @@
         .button:hover {
             background-color: #0056b3;
         }
-
-        .card:hover {
-            transform: scale(1.05);
-        }
-
-        .card-content p, .car p {
-            color: #666;
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
-
-        .card, .car {
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .row.centered {
-            justify-content: center;
-        }
-
-        .row.centered {
-            gap: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .card, .car {
-                width: calc(50% - 20px);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .card, .car {
-                width: 100%;
-            }
-        }
     </style>
 </head>
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar">
-        <a href="index.html">Početna</a>
-        <a href="Car Sales.html">Car Sales</a>
-        <a href="about.html">O nama</a>
-    </nav>
+    <div class="navbar">
+        <a href="#">Početna</a>
+        <a href="#vehicle1">Vozilo 1</a>
+        <a href="#vehicle2">Vozilo 2</a>
+        <a href="#vehicle3">Vozilo 3</a>
+        <a href="#vehicle4">Vozilo 4</a>
+        <a href="#vehicle5">Vozilo 5</a>
+        <a href="#vehicle6">Vozilo 6</a>
+    </div>
 
-    <!-- Card Container -->
+    <!-- Kartice za vozila -->
     <div class="card-container">
-        <!-- Kartica 1 -->
-        <div class="card">
+        <!-- Vozilo 1 -->
+        <div class="card" id="vehicle1">
             <img src="images/Audi.png" alt="Vozilo 1">
             <div class="card-content">
                 <h3>Vozilo 1</h3>
-                <p>Detaljan opis vozila 1. Informacije o performansama, karakteristikama, i svim detaljima o ovom vozilu.</p>
-                <p><strong>Cijena:</strong> 100,000 EUR</p>
-                <p><strong>Godina proizvodnje:</strong> 2020</p>
-                <a href="Car Sales.html" class="button">Pogledaj više</a>
+                <p>Detaljan opis vozila 1.</p>
+                <a href="#" class="button" onclick="openModal(1)">Pogledaj više</a>
             </div>
         </div>
 
-        <!-- Kartica 2 -->
-        <div class="card">
+        <!-- Vozilo 2 -->
+        <div class="card" id="vehicle2">
             <img src="images/Mercedes.jpg" alt="Vozilo 2">
             <div class="card-content">
                 <h3>Vozilo 2</h3>
-                <p>Detaljan opis vozila 2. Informacije o performansama, karakteristikama, i svim detaljima o ovom vozilu.</p>
-                <p><strong>Cijena:</strong> 200,000 EUR</p>
-                <p><strong>Godina proizvodnje:</strong> 2021</p>
-                <a href="Car Sales.html" class="button">Pogledaj više</a>
+                <p>Detaljan opis vozila 2.</p>
+                <a href="#" class="button" onclick="openModal(2)">Pogledaj više</a>
             </div>
         </div>
 
-        <!-- Kartica 3 -->
-        <div class="card">
+        <!-- Vozilo 3 -->
+        <div class="card" id="vehicle3">
             <img src="images/Volkswagen.jpg" alt="Vozilo 3">
             <div class="card-content">
                 <h3>Vozilo 3</h3>
-                <p>Detaljan opis vozila 3. Informacije o performansama, karakteristikama, i svim detaljima o ovom vozilu.</p>
-                <p><strong>Cijena:</strong> 400,000 EUR</p>
-                <p><strong>Godina proizvodnje:</strong> 2021</p>
-                <a href="Car Sales.html" class="button">Pogledaj više</a>
+                <p>Detaljan opis vozila 3.</p>
+                <a href="#" class="button" onclick="openModal(3)">Pogledaj više</a>
+            </div>
+        </div>
+
+        <!-- Vozilo 4 -->
+        <div class="card" id="vehicle4">
+            <img src="images/Mercedes.jpg" alt="Vozilo 4">
+            <div class="card-content">
+                <h3>Vozilo 4</h3>
+                <p>Detaljan opis vozila 4.</p>
+                <a href="#" class="button" onclick="openModal(4)">Pogledaj više</a>
+            </div>
+        </div>
+
+        <!-- Vozilo 5 -->
+        <div class="card" id="vehicle5">
+            <img src="images/Reno.jpg" alt="Vozilo 5">
+            <div class="card-content">
+                <h3>Vozilo 5</h3>
+                <p>Detaljan opis vozila 5.</p>
+                <a href="#" class="button" onclick="openModal(5)">Pogledaj više</a>
+            </div>
+        </div>
+
+        <!-- Vozilo 6 -->
+        <div class="card" id="vehicle6">
+            <img src="images/ford.jpg" alt="Vozilo 6">
+            <div class="card-content">
+                <h3>Vozilo 6</h3>
+                <p>Detaljan opis vozila 6.</p>
+                <a href="#" class="button" onclick="openModal(6)">Pogledaj više</a>
             </div>
         </div>
     </div>
 
-    <div class="row centered">
-        <!-- Kartica 4 -->
-        <div class="car">
-            <img src="images/ford.jpg" alt="Ford" class="expanded-img">
-            <h3>Vozilo 4</h3>
-            <p>Detaljan opis vozila 4. Informacije o performansama, karakteristikama, i svim detaljima o ovom vozilu.</p>
-            <p><strong>Cijena:</strong> 50,000 EUR</p>
-            <p><strong>Godina proizvodnje:</strong> 2000</p>
-            <a href="Car Sales.html" class="button">Pogledaj više</a>
-        </div>
-
-        <!-- Kartica 5 -->
-        <div class="car">
-            <img src="images/reno.jpg" alt="Renault" class="expanded-img">
-            <h3>Vozilo 5</h3>
-            <p>Detaljan opis vozila 5. Informacije o performansama, karakteristikama, i svim detaljima o ovom vozilu.</p>
-            <p><strong>Cijena:</strong> 50,000 EUR</p>
-            <p><strong>Godina proizvodnje:</strong> 2000</p>
-            <a href="Car Sales.html" class="button">Pogledaj više</a>
-        </div>
-
-        <!-- Kartica 6 -->
-        <div class="car">
-            <img src="images/honda.jpg" alt="Honda" class="expanded-img">
-            <h4>Vozilo 6</h4>
-            <p>Detaljan opis vozila 6. Informacije o performansama, karakteristikama, i svim detaljima o ovom vozilu.</p>
-            <p><strong>Cijena:</strong> 300,000 EUR</p>
-            <p><strong>Godina proizvodnje:</strong> 2023</p>
-            <a href="Car Sales.html" class="button">Pogledaj više</a>
+    <!-- Modal za Vozilo 1 -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal(1)">&times;</span>
+            <h2>Detalji o Vozilu 1</h2>
+            <img src="images/Audi.png" alt="Vozilo 1" style="width: 80%;">
+            <p><strong>Cijena:</strong> 100,000 EUR</p>
+            <p><strong>Godina proizvodnje:</strong> 2020</p>
+            <p>Baba auto</p>
         </div>
     </div>
 
-
-
-    <div id="about-section" style="padding: 50px; background-color: #f4f4f4; margin-top: 50px;">
-        <h2>O nama</h2>
-        <p>Dobrodošli na našu stranicu! Mi smo tim strastvenih ljubitelja vozila koji se trudi da obezbjedi najbolje proizvode i usluge za naše korisnike. Naša misija je da korisnicima omogućimo kupovinu kvalitetnih automobila sa svim potrebnim informacijama o vozilu.</p>
-        <p>Posvećeni smo pružanju najboljih vozila i usluga kupcima, tako da možete biti sigurni u sve informacije koje pružamo.</p>
+    <!-- Modal za Vozilo 2 -->
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal(2)">&times;</span>
+            <h2>Detalji o Vozilu 2</h2>
+            <img src="images/Mercedes.jpg" alt="Vozilo 2" style="width: 80%;">
+            <p><strong>Cijena:</strong> 200,000 EUR</p>
+            <p><strong>Godina proizvodnje:</strong> 2021</p>
+            <p>Auto top</p>
+        </div>
     </div>
 
+    <!-- Modal za Vozilo 3 -->
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal(3)">&times;</span>
+            <h2>Detalji o Vozilu 3</h2>
+            <img src="images/Volkswagen.jpg" alt="Vozilo 3" style="width: 80%;">
+            <p><strong>Cijena:</strong> 400,000 EUR</p>
+            <p><strong>Godina proizvodnje:</strong> 2021</p>
+            <p>Isti kao i Reno. Cijena sitnica</p>
+        </div>
+    </div>
 
+    <!-- Modal za Vozilo 4 -->
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal(4)">&times;</span>
+            <h2>Detalji o Vozilu 4</h2>
+            <img src="images/Mercedes.jpg" alt="Vozilo 4" style="width: 80%;">
+            <p><strong>Cijena:</strong> 400,000 EUR</p>
+            <p><strong>Godina proizvodnje:</strong> 2021</p>
+            <p>Za sve momke i djevojke dusu dalo. Ovaj auto razvija 400 konjskih snaga i ide ko lud</p>
+        </div>
+    </div>
+
+    <!-- Modal za Vozilo 5 -->
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal(5)">&times;</span>
+            <h2>Detalji o Vozilu 5</h2>
+            <img src="images/Reno.jpg" alt="Vozilo 5" style="width: 80%;">
+            <p><strong>Cijena:</strong> 100,000 EUR</p>
+            <p><strong>Godina proizvodnje:</strong> 2021</p>
+            <p>Odlican auto za parove. Cijena sitnica</p>
+        </div>
+    </div>
+
+    <!-- Modal za Vozilo 6 -->
+    <div id="modal6" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal(6)">&times;</span>
+            <h2>Detalji o Vozilu 6</h2>
+            <img src="images/ford.jpg" alt="Vozilo 6" style="width: 80%;">
+            <p><strong>Cijena:</strong> 400,000 EUR</p>
+            <p><strong>Godina proizvodnje:</strong> 2021</p>
+            <p>Najjace vozilo razvija po cesti 300 konjskih snaga. Cjena bagatela</p>
+        </div>
+    </div>
+
+    <script>
+        // Funkcija za otvaranje modala
+        function openModal(vehicleId) {
+            document.getElementById("modal" + vehicleId).style.display = "block";
+        }
+
+        // Funkcija za zatvaranje modala
+        function closeModal(vehicleId) {
+            document.getElementById("modal" + vehicleId).style.display = "none";
+        }
+
+        // Zatvaranje modala klikom izvan prozora
+        window.onclick = function(event) {
+            if (event.target.classList.contains("modal")) {
+                let modals = document.querySelectorAll(".modal");
+                modals.forEach(modal => modal.style.display = "none");
+            }
+        }
+    </script>
 
 </body>
 </html>
